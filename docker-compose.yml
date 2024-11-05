@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  compiler:
+    build:
+      context: .
+    environment:
+      - FILES=main.c
+    command: ["sh", "-c", "gcc -m32 -o 32bits_programme $$FILES"]
+    volumes:
+      - ./src:/src
+    working_dir: /src
